@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Le package Rio",
+    "section": "",
+    "text": "Le package “rio” est une collection de fonctions pour importer et exporter des données dans différents formats avec R. Il permet d’importer facilement des fichiers de données à partir de diverses sources, notamment des fichiers plats, des bases de données, des fichiers SAS, SPSS et Stata, ainsi que des fichiers Excel et RData.\n\n# ---- Librairie ---- \n\nlibrary(\"rio\")\ninstall_formats()\n\n[1] TRUE\n\n# --- import de données --- \n\ndata_xslx&lt;-import(\"C:/Users/cottet_cor/Desktop/Stage/R/Package_rio/election_leg.xlsx\")\n\nNew names:\n• `` -&gt; `...2`\n• `` -&gt; `...3`\n• `` -&gt; `...4`\n\ndata_sas&lt;-import(\"C:/Users/cottet_cor/Desktop/Stage/R/Package_rio/adherent.sas7bdat\") #on garde les bons formats\n\n ### --- convertisseur de fichier --- ###\n\ndata_convertit&lt;-convert(in_file =\"C:/Users/cottet_cor/Desktop/Stage/R/Package_rio/election_leg.xlsx\", out_file = \"C:/Users/cottet_cor/Desktop/Stage/R/Package_rio/election_leg.csv\")\n\nNew names:\n• `` -&gt; `...2`\n• `` -&gt; `...3`\n• `` -&gt; `...4`\n\n#a convertit un fichier xlsx en csv (marche vraiment très mal)\n\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Test",
+    "section": "",
+    "text": "title: “Test” author: “COTTET C.” format: html\n\nAbout this site"
+  }
+]

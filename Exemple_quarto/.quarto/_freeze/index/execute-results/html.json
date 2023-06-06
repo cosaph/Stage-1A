@@ -1,0 +1,14 @@
+{
+  "hash": "1153c6e9d7fbcd2f93cce99d799ad9f4",
+  "result": {
+    "markdown": "---\ntitle: \"Le package Rio\"\n---\n\nLe package \"rio\" est une collection de fonctions pour importer et exporter des données dans différents formats avec R. Il permet d'importer facilement des fichiers de données à partir de diverses sources, notamment des fichiers plats, des bases de données, des fichiers SAS, SPSS et Stata, ainsi que des fichiers Excel et RData.\n\n::: {.cell}\n\n```{.r .cell-code}\n# ---- Librairie ---- \n\nlibrary(\"rio\")\ninstall_formats()\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] TRUE\n```\n:::\n\n```{.r .cell-code}\n# --- import de données --- \n\ndata_xslx<-import(\"C:/Users/cottet_cor/Desktop/Stage/R/Package_rio/election_leg.xlsx\")\n```\n\n::: {.cell-output .cell-output-stderr}\n```\nNew names:\n• `` -> `...2`\n• `` -> `...3`\n• `` -> `...4`\n```\n:::\n\n```{.r .cell-code}\ndata_sas<-import(\"C:/Users/cottet_cor/Desktop/Stage/R/Package_rio/adherent.sas7bdat\") #on garde les bons formats\n\n ### --- convertisseur de fichier --- ###\n\ndata_convertit<-convert(in_file =\"C:/Users/cottet_cor/Desktop/Stage/R/Package_rio/election_leg.xlsx\", out_file = \"C:/Users/cottet_cor/Desktop/Stage/R/Package_rio/election_leg.csv\")\n```\n\n::: {.cell-output .cell-output-stderr}\n```\nNew names:\n• `` -> `...2`\n• `` -> `...3`\n• `` -> `...4`\n```\n:::\n\n```{.r .cell-code}\n#a convertit un fichier xlsx en csv (marche vraiment très mal)\n```\n:::\n\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
