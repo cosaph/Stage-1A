@@ -1,0 +1,43 @@
+---
+title: "Comment filter, ajouter, resumer,arranger, selectionner ses données ? "
+toc-title: ""
+categories:
+  - R
+author: "COTTET Coralie"
+affiliations: INED
+
+date: 06/06/2023
+
+---
+<img src="dplyr.png" alt="Texte alternatif de l'image" title="Titre de l'image" width="180" height="180" />
+
+Nous utiliserons dplyr comme package.
+dplyr est une grammaire de manipulation de données, fournissant un ensemble cohérent de verbes qui vous aide à résoudre les problèmes de manipulation de données les plus courants.
+<https://www.rdocumentation.org/packages/dplyr/versions/0.7.8>
+```{r}
+
+# ---- Librairie nécessaire pour le code ----
+
+library(dplyr) 
+library(rio) #pour importer les données (voir article sur rio)
+
+```
+Une fois la librairie importé, nous devons importer les donnés pour pouvoir travailler dessus. Nous utilisons ici un exemple de fichier de traitement de données portant sur le titanic. Nous utiliserons le package Rio pour les importer
+
+
+```{r}
+data(starwars)
+View(starwars)
+```
+Mais comment puis-je _filtrer_ ma table pour n'obtenir que les passagers situé dans la classe 2 à bord du titanic ?
+
+```{r}
+
+starwars<-starwars %>% filter(species=="Human")
+# sans l'opérateur %>% on aurait : 
+starwars_filtered <- filter(starwars, species == "Human")
+# une autre façon de filter sans utiliser le package dplyr est 
+starwars_filtered <- starwars[starwars$species == "Human", ]
+
+```
+Le "pipe" ou opérateur "%>%" en R permet d'enchaîner les opérations sur une table sans avoir à répéter le nom de la table à chaque étape. Cela simplifie la syntaxe et rend le code plus lisible en permettant d'écrire des enchaînements d'opérations sur une table de manière plus concise et efficace.

@@ -4,5 +4,20 @@
   },
   "about.qmd": {
     "about.html": "e11b8f37"
+  },
+  "Rio_package.qmd": {
+    "Rio_package.html": "d4d07c8f"
+  },
+  "Untitled-1.qmd": {
+    "Untitled-1.html": "cb2c682b"
+  },
+  "R/Package_dply/quarto_dplyr.qmd": {
+    "quarto_dplyr.html": "460f15e8"
+  },
+  "R/Package_rio/Rio_package.qmd": {
+    "Rio_package.html": "22999d74"
+  },
+  "R/Untitled-1.qmd": {
+    "Untitled-1.html": "84f209be"
   }
 }
