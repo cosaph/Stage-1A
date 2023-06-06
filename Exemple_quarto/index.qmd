@@ -32,5 +32,8 @@ data_convertit<-convert(in_file ="C:/Users/cottet_cor/Desktop/Stage/R/Package_ri
 #a convertit un fichier xlsx en csv (marche vraiment très mal)
 
 ```
+Pour en apprendre plus sur le package rio:
+ 
+https://rdocumentation.org/packages/rio/versions/0.5.29
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
