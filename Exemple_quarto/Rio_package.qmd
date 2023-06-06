@@ -31,8 +31,7 @@ install_formats()
 
 #Pour des données au format xlsx
 
-data_xslx<-import("C:/Users/cottet_cor/Documents/Stage/Exemple_quarto/election_leg.xlsx") 
-
+data_xslx<-import("C:/Users/cottet_cor/Documents/Stage/Exemple_quarto/election_leg.xlsx")
 
 #Pour des données au format SAS (ou autre), c'est la même chose.
 data_sas<-import("C:/Users/cottet_cor/Documents/Stage/Exemple_quarto/chemin_d_acces.sas7bdat")
@@ -47,7 +46,6 @@ Pour exporter une base de données dans un fichier, il est recommandé d'utilise
 chemin_acces<-export(data_sas,"C:/Users/cottet_cor/Documents/Stage/Exemple_quarto/election_leg.xlsx")
 
 
-```
 ```
 Pour en apprendre plus sur le package rio <https://rdocumentation.org/packages/rio/versions/0.5.29>
 
