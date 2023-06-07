@@ -1,5 +1,5 @@
 ---
-title: "R sous VSCODE"
+title: "R sous VScode"
 toc-title: ""
 categories:
   - R
