@@ -97,7 +97,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body class="nav-fixed">
@@ -176,42 +177,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p><img src="dplyr.png" alt="Texte alternatif de l'image" title="Titre de l'image" width="180" height="180"></p>
+<p><img src="R_logo.svg.png" alt="Texte alternatif de l'image" title="Titre de l'image" width="160" height="140"></p>
 <p>Nous utiliserons dplyr comme package. dplyr est une grammaire de manipulation de données, fournissant un ensemble cohérent de verbes qui vous aide à résoudre les problèmes de manipulation de données les plus courants. <a href="https://www.rdocumentation.org/packages/dplyr/versions/0.7.8" class="uri">https://www.rdocumentation.org/packages/dplyr/versions/0.7.8</a></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ---- Librairie nécessaire pour le code ----</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'dplyr'</code></pre>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#pour utiliser "%&gt;%" (ou pipe) définit en dessous</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:stats':
-
-    filter, lag</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rio) <span class="co">#pour importer les données (voir article sur rio)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Une fois la librairie importé, nous devons importer les donnés pour pouvoir travailler dessus. Nous utilisons ici un exemple de fichier de traitement de données portant sur le titanic. Nous utiliserons le package Rio pour les importer</p>
+<p>Une fois la librairie importée, nous devons importer les donnés pour pouvoir travailler dessus. Nous utilisons ici un exemple de fichier de traitement de données portant sur le titanic. Nous utiliserons le package Rio pour les importer.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(starwars)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(starwars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(starwars)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(starwars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Mais comment puis-je <em>filtrer</em> ma table pour n’obtenir que les passagers situé dans la classe 2 à bord du titanic ?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>starwars<span class="ot">&lt;-</span>starwars <span class="sc">%&gt;%</span> <span class="fu">filter</span>(species<span class="sc">==</span><span class="st">"Human"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># sans l'opérateur %&gt;% on aurait : </span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>starwars_filtered <span class="ot">&lt;-</span> <span class="fu">filter</span>(starwars, species <span class="sc">==</span> <span class="st">"Human"</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># une autre façon de filter sans utiliser le package dplyr est </span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>starwars_filtered <span class="ot">&lt;-</span> starwars[starwars<span class="sc">$</span>species <span class="sc">==</span> <span class="st">"Human"</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p>Mais comment puis-je <strong>filtrer</strong> ma table pour n’obtenir que les passagers situé dans la classe 2 à bord du titanic ?</p>
 <p>Le “pipe” ou opérateur “%&gt;%” en R permet d’enchaîner les opérations sur une table sans avoir à répéter le nom de la table à chaque étape. Cela simplifie la syntaxe et rend le code plus lisible en permettant d’écrire des enchaînements d’opérations sur une table de manière plus concise et efficace.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>starwars<span class="ot">&lt;-</span>starwars <span class="sc">%&gt;%</span> <span class="fu">filter</span>(species<span class="sc">==</span><span class="st">"Human"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># sans l'opérateur %&gt;% on aurait : </span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>starwars_filtered <span class="ot">&lt;-</span> <span class="fu">filter</span>(starwars, species <span class="sc">==</span> <span class="st">"Human"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># une autre façon de filter sans utiliser le package dplyr est </span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>starwars_filtered <span class="ot">&lt;-</span> starwars[starwars<span class="sc">$</span>species <span class="sc">==</span> <span class="st">"Human"</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Comment est-ce que je peut <strong>ajouter</strong> des données à mon dataframe?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#avec dplyr on utilise la fonction mutate() pour ajouter des colonnes</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># a notre dataframe. Pour afficher la nouvelle colonne dans le dataframe </span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#on rajoute la commande select(nouvelle_colonne,everything())</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">moyenne=</span><span class="fu">mean</span>(<span class="fu">is.na</span>(mass))) <span class="sc">%&gt;%</span> <span class="fu">select</span>(moyenne,<span class="fu">everything</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Comment est-ce que je peux <em>selectionner</em> uniquement les colonnes qui m’interesse pour mon travail?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> <span class="fu">select</span>(species,gender) <span class="co">#on selectionne ici l'espèce et le genre</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Comment est-ce que je peux <strong>grouper</strong> mes données ?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(species) <span class="co"># regroupe par espèce</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#La fonction tapply() est une autre fonction de base de R </span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#qui permet de regrouper les données selon une ou plusieurs variables</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>avg_height_by_species <span class="ot">&lt;-</span> <span class="fu">tapply</span>(starwars<span class="sc">$</span>height, starwars<span class="sc">$</span>species, mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#La fonction aggregate() est une fonction de base de R qui permet de regrouper les données selon une ou plusieurs variables </span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>avg_height_by_species <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(starwars<span class="sc">$</span>height, <span class="at">by =</span> <span class="fu">list</span>(starwars<span class="sc">$</span>species), <span class="at">FUN =</span> mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Pour en apprendre plus sur dplyr :</p>
+<p><a href="https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html" class="uri">https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html</a></p>
 
 
 
