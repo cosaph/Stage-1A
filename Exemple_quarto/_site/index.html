@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="COTTET Coralie">
+<meta name="dcterms.date" content="2023-06-06">
 
-<title>Exemple_quarto - Le package Rio</title>
+<title>Exemple_quarto - Import/Export de données avec le package Rio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -142,14 +144,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Le package Rio</h1>
-</div>
+<h1 class="title">Import/Export de données avec le package Rio</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">R</div>
+  </div>
+  </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">COTTET Coralie </p>
+  </div>
+    </div>
 
 <div class="quarto-title-meta">
 
-    
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 6, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -157,37 +176,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>Le package “rio” est une collection de fonctions pour importer et exporter des données dans différents formats avec R. Il permet d’importer facilement des fichiers de données à partir de diverses sources, notamment des fichiers plats, des bases de données, des fichiers SAS, SPSS et Stata, ainsi que des fichiers Excel et RData.</p>
+<p><img src="logo_rio.png" alt="Texte alternatif de l'image" title="Titre de l'image"></p>
+<p>L’import de données est la base de tout programme informatique portant sur le traitement de données. Le package “rio” est une collection de fonctions pour importer et exporter des données dans différents formats avec R. Il permet d’importer facilement des fichiers de données à partir de diverses sources, notamment des fichiers plats, des bases de données, des fichiers SAS, SPSS et Stata, ainsi que des fichiers Excel et RData. Il faut au préalable installer le package avec la commande suivante: ” install.packages(“rio”)“.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ---- Librairie ---- </span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"rio"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rio)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install_formats</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- import de données --- </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>data_xslx<span class="ot">&lt;-</span><span class="fu">import</span>(<span class="st">"C:/Users/cottet_cor/Desktop/Stage/R/Package_rio/election_leg.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>New names:
-• `` -&gt; `...2`
-• `` -&gt; `...3`
-• `` -&gt; `...4`</code></pre>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Pour des données au format xlsx</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>data_xslx<span class="ot">&lt;-</span><span class="fu">import</span>(<span class="st">"C:/Users/cottet_cor/Documents/Stage/Exemple_quarto/election_leg.xlsx"</span>) </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Pour des données au format SAS (ou autre), c'est la même chose.</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>data_sas<span class="ot">&lt;-</span><span class="fu">import</span>(<span class="st">"C:/Users/cottet_cor/Documents/Stage/Exemple_quarto/chemin_d_acces.sas7bdat"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data_sas<span class="ot">&lt;-</span><span class="fu">import</span>(<span class="st">"C:/Users/cottet_cor/Desktop/Stage/R/Package_rio/adherent.sas7bdat"</span>) <span class="co">#on garde les bons formats</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a> <span class="do">### --- convertisseur de fichier --- </span><span class="al">###</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>data_convertit<span class="ot">&lt;-</span><span class="fu">convert</span>(<span class="at">in_file =</span><span class="st">"C:/Users/cottet_cor/Desktop/Stage/R/Package_rio/election_leg.xlsx"</span>, <span class="at">out_file =</span> <span class="st">"C:/Users/cottet_cor/Desktop/Stage/R/Package_rio/election_leg.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>New names:
-• `` -&gt; `...2`
-• `` -&gt; `...3`
-• `` -&gt; `...4`</code></pre>
+<p>Pour exporter une base de données dans un fichier, il est recommandé d’utiliser la méthode “export” en utilisant le dataframe que vous voulez exporter, ici “data_sas” (comme illustré ci-dessous), et en spécifiant le chemin où vous souhaitez le sauvegarder. Cette méthode est généralement utilisée lorsque vous apportez des modifications directes à votre dataframe et que vous souhaitez enregistrer les changements quelque part.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- export de données ---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>chemin_acces<span class="ot">&lt;-</span><span class="fu">export</span>(data_sas,<span class="st">"C:/Users/cottet_cor/Documents/Stage/Exemple_quarto/election_leg.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#a convertit un fichier xlsx en csv (marche vraiment très mal)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p>``` Pour en apprendre plus sur le package rio <a href="https://rdocumentation.org/packages/rio/versions/0.5.29" class="uri">https://rdocumentation.org/packages/rio/versions/0.5.29</a></p>
 <p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
 
 
