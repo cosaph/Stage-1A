@@ -61,5 +61,19 @@
     "title": "Exemple_quarto",
     "section": "date: 06/06/2023",
     "text": "date: 06/06/2023"
+  },
+  {
+    "objectID": "R/Package_purr/package_purr.html",
+    "href": "R/Package_purr/package_purr.html",
+    "title": "Packages Purr",
+    "section": "",
+    "text": "purrr est un package dédié à la programmation fonctionnelle. Ses fonctions principales sont les fonctions map() (map(), map_chr(), map_dbl(), map_dfr(), etc…), elles permettent d’appliquer une même fonction (ou une même série de fonctions) à chaque élément d’un ensemble (les colonnes d’un data frame, ou les éléments d’une list par exemple). En gros, ces fonctions map() permettent de remplacer les boucles for() avantageusement en termes de nombre de lignes de code et de temps de calcul (parce que ces fonctions reposent sur la récursivité).\n\nlibrary(purrr) \n\nA titre d’exemple on va essayer de supposer que nous avons une liste de vecteurs numériques et que nous allons appliquer une fonction à chaque vecteur pour en extraire la valeur maximale. Sans le package purr il est nécessaire d’utiliser une boucle for:\n\n# Créer une liste de vecteurs\nmy_list &lt;- list(a = c(1, 2, 3), b = c(4, 5, 6), c = c(7, 8, 9))\n\n# Initialiser un vecteur vide pour stocker les résultats\nmax_vals &lt;- numeric(length(my_list))\n\n# Appliquer la fonction max() à chaque vecteur de la liste\nfor (i in seq_along(my_list)) {\n  max_vals[i] &lt;- max(my_list[[i]])\n}\n# Afficher les résultats\nmax_vals\n\n[1] 3 6 9\n\n\nAvec le package purrr:\n\n# Créer une liste de vecteurs\nmy_list &lt;- list(a = c(1, 2, 3), b = c(4, 5, 6), c = c(7, 8, 9))\n\n# Appliquer la fonction max() à chaque vecteur de la liste\nmax_vals &lt;- map(my_list, max)\n\n# Afficher les résultats\nmax_vals\n\non remarque qu’on gagne quand même pas mal de temps d’écriture en utilisant le package purrr, ce qui peut vraiment servir quand on a de pas mal de ligne de code."
+  },
+  {
+    "objectID": "R/Package_purrr/package_purrr.html",
+    "href": "R/Package_purrr/package_purrr.html",
+    "title": "Packages Purr ou comment en finir avec les boucles",
+    "section": "",
+    "text": "purrr est un package dédié à la programmation fonctionnelle. Ses fonctions principales sont les fonctions map() (map(), map_chr(), map_dbl(), map_dfr(), etc…), elles permettent d’appliquer une même fonction (ou une même série de fonctions) à chaque élément d’un ensemble (les colonnes d’un data frame, ou les éléments d’une list par exemple). En gros, ces fonctions map() permettent de remplacer les boucles for() avantageusement en termes de nombre de lignes de code et de temps de calcul (parce que ces fonctions reposent sur la récursivité).\n\nlibrary(purrr) \n\nA titre d’exemple on va essayer de supposer que nous avons une liste de vecteurs numériques et que nous allons appliquer une fonction à chaque vecteur pour en extraire la valeur maximale. Sans le package purr il est nécessaire d’utiliser une boucle for:\n\n# Créer une liste de vecteurs\nmy_list &lt;- list(a = c(1, 2, 3), b = c(4, 5, 6), c = c(7, 8, 9))\n\n# Initialiser un vecteur vide pour stocker les résultats\nmax_vals &lt;- numeric(length(my_list))\n\n# Appliquer la fonction max() à chaque vecteur de la liste\nfor (i in seq_along(my_list)) {\n  max_vals[i] &lt;- max(my_list[[i]])\n}\n# Afficher les résultats\nmax_vals\n\n[1] 3 6 9\n\n\nAvec le package purrr:\n\n# Créer une liste de vecteurs\nmy_list &lt;- list(a = c(1, 2, 3), b = c(4, 5, 6), c = c(7, 8, 9))\n\n# Appliquer la fonction max() à chaque vecteur de la liste\nmax_vals &lt;- map(my_list, max)\n\n# Afficher les résultats\nmax_vals\n\non remarque qu’on gagne quand même pas mal de temps d’écriture en utilisant le package purrr, ce qui peut vraiment servir quand on a de pas mal de ligne de code.\n\n\nPour en apprendre plus sur le package purr :\nhttps://delladata.fr/liste-de-ressources-pour-le-package-purrr/"
   }
 ]

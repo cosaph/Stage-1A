@@ -28,5 +28,11 @@
   },
   "R/Nuage_de_mot/nuage_de_mot.qmd": {
     "nuage_de_mot.html": "c04d1c68"
+  },
+  "R/Package_purr/package_purr.qmd": {
+    "package_purr.html": "9b991f03"
+  },
+  "R/Package_purrr/package_purrr.qmd": {
+    "package_purrr.html": "e7f8afc3"
   }
 }
