@@ -22,12 +22,17 @@ les packages recquis pour le code et de charger (à chaque fois ) les librairies
 
 ```{r results='hide'}
 # ---- library ----
-library("tm")
-library("SnowballC")
-library("wordcloud")
-library("RColorBrewer")
+library("tm") # pour le text mining
+library("SnowballC") # pour le text stemming
+library("wordcloud") # générateur de word-cloud 
+library("RColorBrewer") # pour charger des couleurs dans le nuage de mot
 
 ```
+Le _text-mining_ (ou fouille de texte) est une technique d'analyse de données qui consiste à extraire des informations significatives à partir de données textuelles non structurées telles que des documents, des e-mails, des pages web, des tweets, etc.
+
+Le _stemming_ est une technique de traitement automatique du langage naturel (TALN) qui consiste à réduire les mots à leur forme racine ou à leur base lexicale, en éliminant les suffixes ou les terminaisons des mots. Par exemple, le stemming pourrait transformer les mots "manger", "mangeais" et "mangé" en leur forme racine "mang".
+
+
 J'ai choisis une publication de Mathieu Trachman datant de 2022 intitulé "Très masculin, pas très féminine. Les variations sociales du genre",
 Population et Sociétés: 1-4, pour illustrer mon exemple. 
 
@@ -92,4 +97,7 @@ C'est quoi le __set.seed(1234)__ ?
 Lorsque vous utilisez une graine aléatoire (le set.seed(1234)), cela garantit que les résultats de votre analyse seront les mêmes à chaque fois que vous exécutez le code. Cela est particulièrement important lorsque vous travaillez avec des fonctions qui impliquent une certaine forme d'aléatoire, comme la génération de nuages de mots.
 
 Ainsi, si vous utilisez la même graine aléatoire (par exemple, 1234) dans votre code chaque fois que vous exécutez l'analyse, vous obtiendrez toujours les mêmes résultats, ce qui facilite la reproductibilité de votre analyse. Sans fixer la graine aléatoire, la génération du nuage de mots peut varier à chaque exécution, car les fonctions qui génèrent le nuage de mots utilisent généralement des algorithmes aléatoires pour placer les mots dans l'espace et choisir les couleurs. Cela signifie que chaque fois que vous exécutez le code, vous obtiendrez un nuage de mots différent, même si les données d'entrée sont les mêmes.
+
+Pour en apprendre plus sur la constrcution des images de mots :
+<http://www.sthda.com/french/wiki/text-mining-et-nuage-de-mots-avec-le-logiciel-r-5-etapes-simples-a-savoir>
 
