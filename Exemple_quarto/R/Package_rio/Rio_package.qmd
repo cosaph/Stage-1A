@@ -8,6 +8,7 @@ affiliations: INED
 
 date: 06/06/2023
 
+css: "style.css"
 ---
 
 
@@ -19,7 +20,7 @@ Le package "rio" est une collection de fonctions pour importer et exporter des d
 Il faut au préalable installer le package avec la commande suivante: " install.packages("rio")".
 
 
-```{r}
+```{r result='hide'}
 
 
 # ---- Librairie ---- 
@@ -31,22 +32,24 @@ install_formats()
 
 #Pour des données au format xlsx
 
-data_xslx<-import("C:/Users/cottet_cor/Documents/Stage/Exemple_quarto/election_leg.xlsx")
+data_xslx<-import("election_leg.xlsx") 
+
 
 #Pour des données au format SAS (ou autre), c'est la même chose.
-data_sas<-import("C:/Users/cottet_cor/Documents/Stage/Exemple_quarto/chemin_d_acces.sas7bdat")
+data_sas<-import("chemin_d_acces.sas7bdat")
 
 ```
 Pour exporter une base de données dans un fichier, il est recommandé d'utiliser la méthode "export" en utilisant le dataframe que vous voulez exporter, ici "data_sas"  (comme illustré ci-dessous), et en spécifiant le chemin où vous souhaitez le sauvegarder. Cette méthode est généralement utilisée lorsque vous apportez des modifications directes à votre dataframe et que vous souhaitez enregistrer les changements quelque part.
 
-```{r}
+```{r results='hide'}
 
 # --- export de données ---
 
-chemin_acces<-export(data_sas,"C:/Users/cottet_cor/Documents/Stage/Exemple_quarto/election_leg.xlsx")
+chemin_acces<-export(data_sas,"election_leg.xlsx")
 
 
 ```
+
 Pour en apprendre plus sur le package rio <https://rdocumentation.org/packages/rio/versions/0.5.29>
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.

@@ -86,7 +86,10 @@ wordcloud(words = d$word, freq = d$freq, min.freq = 4,
           colors=brewer.pal(8, "Paired")) #réalisation du nuage de mots.
 
 # On pourrait faire quelque chose de beaucoup plus neutre en terme de couleur avec la commande :
+
+
 set.seed(1234)
+
 wordcloud(words = d$word, freq = d$freq, min.freq = 4,
           max.words=200, random.order=FALSE, rot.per=0.35, 
           colors="black")

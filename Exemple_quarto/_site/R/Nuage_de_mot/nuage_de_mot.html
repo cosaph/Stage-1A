@@ -97,7 +97,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -119,13 +119,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
+    <a class="nav-link" href="../../index.qmd" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">Test</span></a>
-  </li>  
+  <li class="dropdown-header">
+ <span class="menu-text">about.qmd</span></li>
 </ul>
             <div class="quarto-navbar-tools ms-auto">
 </div>
@@ -261,10 +259,13 @@ documents</code></pre>
 <span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">colors=</span><span class="fu">brewer.pal</span>(<span class="dv">8</span>, <span class="st">"Paired"</span>)) <span class="co">#réalisation du nuage de mots.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>::: {.cell-output-display} <img src="nuage_de_mot_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"> :::</p>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On pourrait faire quelque chose de beaucoup plus neutre en terme de couleur avec la commande :</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wordcloud</span>(<span class="at">words =</span> d<span class="sc">$</span>word, <span class="at">freq =</span> d<span class="sc">$</span>freq, <span class="at">min.freq =</span> <span class="dv">4</span>,</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">max.words=</span><span class="dv">200</span>, <span class="at">random.order=</span><span class="cn">FALSE</span>, <span class="at">rot.per=</span><span class="fl">0.35</span>, </span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">colors=</span><span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="fu">wordcloud</span>(<span class="at">words =</span> d<span class="sc">$</span>word, <span class="at">freq =</span> d<span class="sc">$</span>freq, <span class="at">min.freq =</span> <span class="dv">4</span>,</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">max.words=</span><span class="dv">200</span>, <span class="at">random.order=</span><span class="cn">FALSE</span>, <span class="at">rot.per=</span><span class="fl">0.35</span>, </span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">colors=</span><span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>::: {.cell-output-display} <img src="nuage_de_mot_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid" width="672"> ::: :::</p>
 <p>C’est quoi le <strong>set.seed(1234)</strong> ? Lorsque vous utilisez une graine aléatoire (le set.seed(1234)), cela garantit que les résultats de votre analyse seront les mêmes à chaque fois que vous exécutez le code. Cela est particulièrement important lorsque vous travaillez avec des fonctions qui impliquent une certaine forme d’aléatoire, comme la génération de nuages de mots.</p>
 <p>Ainsi, si vous utilisez la même graine aléatoire (par exemple, 1234) dans votre code chaque fois que vous exécutez l’analyse, vous obtiendrez toujours les mêmes résultats, ce qui facilite la reproductibilité de votre analyse. Sans fixer la graine aléatoire, la génération du nuage de mots peut varier à chaque exécution, car les fonctions qui génèrent le nuage de mots utilisent généralement des algorithmes aléatoires pour placer les mots dans l’espace et choisir les couleurs. Cela signifie que chaque fois que vous exécutez le code, vous obtiendrez un nuage de mots différent, même si les données d’entrée sont les mêmes.</p>

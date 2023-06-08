@@ -1,0 +1,15 @@
+/* css styles */
+
+body {
+    background-color: black;
+    color: #ffffff;
+    
+  }
+  .hljs {
+    color: #ffffff;
+  }
+
+  
+pre.sourceCode {
+    background-color: white;
+  }

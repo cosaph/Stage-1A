@@ -1,8 +1,0 @@
----
----
-title: "Test"
-author: "COTTET C."
-format: html
----
-
-About this site
