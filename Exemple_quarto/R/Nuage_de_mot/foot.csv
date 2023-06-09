@@ -1,0 +1,34 @@
+Column1;Column2;Column3;Column4
+Date        ; Match                                              ; Score  ; Commentaire
+------------;----------------------------------------------------;--------;--------------------------------------------------------
+2022-08-06  ; OL - Nice                                          ; 3-0    ; Victoire facile pour l'OL a† domicile
+2022-08-13  ; Reims - OL                                         ; 1-2    ; Belle victoire de l'OL 
+2022-08-21  ; OL - PSG                                           ; 1-1    ; Match nul contre l'un des meilleurs clubs de France
+2022-08-27  ; Lorient - OL                                       ; 0-2    ; Victoire solide de l'OL
+2022-09-03  ; OL - Montpellier                                   ; 2-1    ; Victoire difficile mais
+2022-09-11  ; Strasbourg - OL                                    ; 0-3    ; Belle victoire de l'OL
+2022-09-17  ; OL - Metz                                          ; 3-0    ; Victoire convaincante de l'OL 
+2022-09-24  ; Lens - OL                                          ; 1-1    ; Match nul 
+2022-10-02  ; OL - Marseille                                     ; 2-0    ; Victoire importante contre un rival historique
+2022-10-16  ; Rennes - OL                                        ; 1-1    ; Match nul 
+2022-10-23  ; OL - Nantes                                        ; 4-0    ; Victoire facile pour l'OL 
+2022-10-30  ; Bordeaux - OL                                      ; 0-2    ; Victoire solide de l'OL 
+2022-11-06  ; OL - Brest                                         ; 3-1    ; Victoire m√©rit√©e pour l'OL 
+2022-11-20  ; Toulouse - OL                                      ; 0-4    ; Victoire de l'OL 
+2022-11-27  ; OL - Lille                                         ; 2-1    ; Victoire importante contre les champions en titre
+2022-12-04  ; Angers - OL                                        ; 0-3    ; Victoire facile de l'OL 
+2022-12-11  ; OL - Monaco                                        ; 2-2    ; Match nul contre une
+2022-12-18  ; Nice - OL                                          ; 1-2    ; Victoire difficile mais 
+2023-01-08  ; OL - Reims                                         ; 3-0    ; Victoire facile pour l'OL
+2023-01-15  ; PSG - OL                                           ; 2-1    ; D√©faite contre l'un des meilleurs clubs de France
+2023-01-22  ; OL - Lorient                                       ; 4-1    ; Victoire convaincante de l'OL
+2023-01-29  ; Montpellier - OL                                   ; 1-0    ; DÈfaite surprise pour l'OL 
+2023-02-05  ; OL - Strasbourg                                    ; 2-0    ; Victoire  pour l'OL
+2023-02-12  ; Metz - OL                                          ; 0-1    ; Victoire difficile mais importante pour l'OL
+2023-02-19  ; OL - Lens                                          ; 3-0    ; Victoire convaincante de l'OL 
+2023-02-26  ; Marseille - OL                                     ; 1-1    ; Match nul contre un rival historique
+2023-03-05  ; OL - Rennes                                        ; 3-0    ; Victoire facile pour l'OL 
+2023-03-12  ; Nantes - OL                                        ; 2-3    ; Victoire difficile 
+2023-03-19  ; OL - Bordeaux                                      ; 4-0    ; Victoire  de l'OL
+2023-04-02  ; Brest - OL                                         ; 0-2    ; Victoire solide de l'OL
+2023-04-09  ; OL - Toulouse                                      ; 2-0    ; Victoire importante pour l'OL 

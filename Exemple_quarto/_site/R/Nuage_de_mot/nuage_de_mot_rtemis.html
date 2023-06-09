@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="COTTET Coralie">
-<meta name="dcterms.date" content="2023-07-06">
+<meta name="dcterms.date" content="2023-06-06">
 
-<title>Exemple_quarto - R sous VScode</title>
+<title>Exemple_quarto - Comment faire un nuage de mot? Avec R.temis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -109,9 +143,10 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">R sous VScode</h1>
+<h1 class="title">Comment faire un nuage de mot? Avec R.temis</h1>
   <div class="quarto-categories">
     <div class="quarto-category">R</div>
+    <div class="quarto-category">VSCode</div>
   </div>
   </div>
 
@@ -131,7 +166,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 6, 2023</p>
+      <p class="date">June 6, 2023</p>
     </div>
   </div>
   
@@ -141,24 +176,57 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><img src="Visual_Studio_Code_1.35_icon.svg.png" alt="Texte alternatif de l'image" title="Titre de l'image" width="120" height="120"></p>
-<p><strong>Niveau de difficulté:</strong></p>
-<p><img src="niveau_difficulte\2_piment.png" alt="Texte alternatif de l'image" title="Titre de l'image" width="80" height="70"></p>
-<p>VSCode est un IDE (environnement de dévellopement integré) qui offre une intégration avec de nombreux outils et langages de programmation. L’extension R pour VS Code vous permet de travailler avec R dans un environnement de développement intégré, ce qui peut vous faire gagner du temps. VS Code vous permet de personnaliser l’éditeur de code et les paramètres de l’IDE selon vos besoins.</p>
-<p><strong>Installation de VScode</strong></p>
-<p>L’installation de vscode se fait sur le site suivant.Selectionner le bon système d’exploitation et télécharger VSCode.</p>
-<p><a href="https://code.visualstudio.com/Download" class="uri">https://code.visualstudio.com/Download</a></p>
-<p><strong>Installation de R</strong></p>
-<p>Maintenant que vous êtes sur VSCode, il faut cliquer sur l’icône situé sur le côté :</p>
-<p><img src="icone_extension_vscode.png" alt="Texte alternatif de l'image" title="Titre de l'image" width="55" height="55"></p>
-<p>Dans la barre de recherche il faut inscrire R, puis cliquer sur télécharger. Télécharger également Rtools de la même manière que R. Ensuite ouvrez un fichier en cliquant sur file, puis new file et selectionnez le language dans lequel vous souhaitez coder (ici R).</p>
-<p><strong>Comment executer le programme?</strong></p>
-<p>Il suffit de cliquer sur le bouton “run” suivant:</p>
-<p><img src="run_r_vscode.png" alt="Texte alternatif de l'image" title="Titre de l'image" width="55" height="55"></p>
-<p><strong>Comment executer une cellule ?</strong></p>
-<p>Il suffit de se mettre sur la ligne de code à executer et de faire “crtl+entrée” Si cela ne marche pas il peut avoir une erreur de connection entre l’extension Rtools et R. (erreur commune : <em>[Error - 2:58:07 PM] R Tools client: couldn’t create connection to server.</em>) Pour la résoudre: “Crtl+Shift+P”. Cliquez sur préférence : Open Keyboard shortcut et supprimez r.execute in terminal.</p>
-<p>Lien de l’explication de résolution d’erreur:</p>
-<p><a href="https://stackoverflow.com/questions/75261815/r-tools-client-couldnt-create-connection-to-server-launching-server-using-com" class="uri">https://stackoverflow.com/questions/75261815/r-tools-client-couldnt-create-connection-to-server-launching-server-using-com</a></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ----- Librairies ----</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"R.temis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: tm</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: NLP</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: slam</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: FactoMineR</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: explor</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"RColorBrewer"</span>) <span class="co"># pour charger des couleurs dans le nuage de mot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>(N’oubliez pas d’installer les packages avant d’exéctuer les libraries si ceux-ci sont nouveaux!) Concernant le choix des données, j’ai choisis une publication de Mathieu Trachman datant de 2022 intitulé “Très masculin, pas très féminine. Les variations sociales du genre”, Population et Sociétés: 1-4, pour illustrer mon exemple.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ---- Import des données ----</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>corpus <span class="ot">&lt;-</span> <span class="fu">import_corpus</span>(<span class="st">"C:/Users/cottet_cor/Documents/Stage/Exemple_quarto/R/Nuage_de_mot/genre.csv"</span>,<span class="at">format=</span><span class="st">"csv"</span>,<span class="at">textcolumn=</span><span class="dv">1</span>,<span class="at">language=</span><span class="st">"fr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>C’est quoi les <strong>stop_words</strong>?</p>
+<p>Les stop words (ou mots vides) sont des mots très courants dans un langage donné, comme les prépositions, les articles, les pronoms, etc., qui sont souvent omis lors de l’analyse de texte car ils ne portent pas de sens important pour la compréhension globale du texte.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ---- traitement des données ----</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>dtmsmo <span class="ot">&lt;-</span><span class="fu">build_dtm</span>(corpus, <span class="at">remove_stopwords =</span> T, <span class="at">min_length =</span> <span class="dv">0</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>dic <span class="ot">&lt;-</span><span class="fu">dictionary</span>(dtmsmo) <span class="co">#création d'un dictionnaire de mot </span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">frequent_terms</span>(dtmsmo) <span class="co">#fréquence d'apparition des mots dans le texte en question</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Il est possible de faire un traitement plus poussé des données</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ---- Générateur du Nuage ---- </span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>cloud<span class="ot">&lt;-</span><span class="fu">word_cloud</span>(dtmsmo, <span class="at">color=</span><span class="fu">brewer.pal</span>(<span class="dv">10</span>, <span class="st">"OrRd"</span>), <span class="at">min.freq=</span><span class="dv">0</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in brewer.pal(10, "OrRd"): n too large, allowed maximum for palette OrRd is 9
+Returning the palette you asked for with that many colors</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="nuage_de_mot_rtemis_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">terms_graph</span>(dtmsmo, <span class="at">min_occ=</span><span class="dv">1</span>,<span class="at">interactive=</span>T) <span class="co">#pour obtenir un graph de mots.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
 
 
 
