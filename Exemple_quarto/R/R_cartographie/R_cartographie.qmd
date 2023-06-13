@@ -155,3 +155,55 @@ title("Zonage à façon des arrondissements de Paris")
 
 
 ```
+On va maintenant essayer de coloriser les arrondissement en fonction de la population.
+Dans un premier temps on créer une variable population
+
+```{r results='hide'}
+
+ze13$pop<-c(100196, 95487, 146699, 136591, 58850, 140849, 142462, 118238, 166860, 163445, 139992, 102163, 183399, 169214, 165494, 149500, 144657, 104287, 142005, 100831)
+
+```
+
+Je fais le choix d'avoir un dégradé de couleur bleu, voici la commande pour l'obtenir:
+```{r results='hide'}
+library(grDevices)
+mycolors <- colorRampPalette(c("lightblue", "darkblue"))(20)
+```
+Puis je réalise mon plot 
+
+```{r results="hide"}
+# On construit le graphique
+plot(sf::st_geometry(ze13), col = mycolors[cut(ze13$pop, breaks = ze13$pop)], border = "black", lwd = 1.5)
+
+text(sf::st_coordinates(st_centroid(ze13)), labels = ze13$nom_arondissement, cex = 0.8, col = "white")
+# Ajouter une légende
+legend("topright", 
+       title = "Population", 
+       legend = ze13$nom_arondissement, 
+       fill = mycolors[cut(ze13$pop, breaks = ze13$pop)], 
+       border = "black",
+       box.lwd = 1,
+       cex=0.5) #réduire la taille de la légende
+title("Zonage à façon des arrondissements de Paris")
+
+```
+
+Pour les plus aguerries.es on peut utiliser ggplot 
+
+```{r results='hide'}
+library(viridis)
+library(grDevices)
+library(ggplot2)
+# Convertir l'objet sf en un objet ggplot2
+ggplot_data <- ggplot() + 
+  geom_sf(data = ze13, aes(fill = pop, color = NULL)) + 
+  labs(title = "Zonage à façon des arrondissements de Paris") + 
+  scale_color_viridis(option = "D")
+
+# Afficher la carte avec les noms des arrondissements
+ggplot_data
+
+```
+
+
+

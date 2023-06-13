@@ -19,6 +19,7 @@ css: "style.css"
 # ----- Librairies ----
 library("R.temis")
 library("RColorBrewer") # pour charger des couleurs dans le nuage de mot
+
 ```
 
 

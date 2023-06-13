@@ -37,7 +37,6 @@ l
 library(mapview)
 library(sf)
 library(stringr)
-
 #fonction principale: mapview()
 
 # On travaille sur Paris 
@@ -60,6 +59,11 @@ arrondissements_df <- lapply(arrondissements_df, function(x) if (is.list(x)) as.
 # Convertir la liste en data.frame
 arrondissements_df <- as.data.frame(arrondissements_df)
 
+#mes données sont sous la forme d'un vecteur c(a,b). Pour travailler plus simplement je travaille sur la colonne avec le vecteur en question pour créer deux colonnes latitude et longitude. 
+# Exemple de données
+
+df <- data.frame(id = c(1, 2), coordinates = arrondissements_df$geom_x_y)
+
 
 # Diviser la chaîne de caractères à la virgule et extraire la deuxième partie
 coord_vec <- as.data.frame(strsplit(df$coordinates, ","))
@@ -76,7 +80,6 @@ coord_vec[2,]<- as.numeric(coord_vec[2,])
 coord_vec_tranposee<-t(coord_vec)
 
 # Afficher le résultat
-
 arrondissements_df$lon<-coord_vec_tranposee[,1]
 arrondissements_df$lat<-coord_vec_tranposee[,2]
 
