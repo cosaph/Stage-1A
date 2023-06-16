@@ -9,7 +9,7 @@ affiliations: INED
 
 date: 06/06/2023
 
-css: "style.css"
+
 
 ---
 Comme dans tout bon code R il est nécessaire au début d'installer (une fois sur un ordinateur): (dans le terminal de commande )

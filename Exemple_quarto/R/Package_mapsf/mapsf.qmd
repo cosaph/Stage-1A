@@ -9,10 +9,7 @@ affiliations: INED
 date: 06/06/2023
 
 css: "style.css"
-output:
-   html_document: 
-     highlight: kate
-     toc: yes
+
 
 ---
 
