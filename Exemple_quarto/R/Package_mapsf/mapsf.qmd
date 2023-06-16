@@ -118,19 +118,44 @@ mf_map(
 
 __Et si on regroupait deux arrondissemtns ?__
 
+Le code ci-dessous montre la fusion du 15e et 16e arrondissement. 
+L'idée globale du code c'est de fusionner les deux polygones (celui du 15e et du 16e). Ensuite, on recrée toute la ligne de notre tableau de donnée pour pouvoir la fusionner avec celui-ci. 
+
 ```{r results='hide'}
-# Identifier les arrondissements à regrouper (ici le 15e et le 16e)
-arr_15_16 <- arrondissements[arrondissements$c_ar   %in% c("15", "16"),]
+# ---- Fusionner deux polygones ---- #
 
-# Créer un jeu de données géographiques pour la zone d'intérêt
-zone_interet <- st_intersection(arr_15_16)
+# Sélectionner les deux polygones que vous souhaitez fusionner
+poly1 <- arrondissements[arrondissements$l_aroff == "Passy", ] # sélectionne le polygone avec le nom "Passy"
+poly2 <- arrondissements[arrondissements$l_aroff == "Vaugirard", ] # sélectionne le polygone avec le nom "Vaugirard"
 
-# Créer un vecteur de couleurs pour les arrondissements et la zone d'intérêt
-colors <- c("#FFCDD2", "#B71C1C")
-# Afficher la carte avec les arrondissements et la zone d'intérêt
+# Fusionner les polygones
+new_poly <- st_union(poly1, poly2) # fusionne les deux polygones sélectionnés en un seul polygone
 
-mf_map(arrondissements, col = colors[arrondissements$c_ar%in% c("15", "16") + 1])
-mf_map(x=cours_deau,lwd=2,border="lightblue",col="lightblue",add=TRUE)
+# Ajouter la surface, la population, le périmètre et les coordonnées géographiques des deux polygones 
+
+#l'idée c'est de recréer une nouvelle ligne pour notre nouveau polygone pour qu'on puisse le reinsérer dans notre tableau. 
+
+new_poly$surface <- new_poly$surface + new_poly$surface.1 # ajouter la surface des deux polygones
+new_poly$n_sq_co <- new_poly$n_sq_co + new_poly$n_sq_co.1 # ajouter la population des deux polygones
+new_poly$perimetre <- new_poly$perimetre + new_poly$perimetre.1 # ajouter le périmètre des deux polygones
+new_poly$n_sq_ar <- new_poly$n_sq_ar + new_poly$n_sq_ar.1 # ajouter les coordonnées géographiques des deux polygones
+
+# Modifier les informations de localisation
+new_poly$l_aroff <- "un nouvel arrondissement" # changer le nom de l'arrondissement
+new_poly$l_ar <- "xxème Ardt" # changer le numéro de l'arrondissement
+new_poly$c_ar <- "xx" # changer le code de l'arrondissement
+new_poly$c_arinsee <- "75xxxx" # changer le code INSEE de la commune
+
+# Sélectionner certaines colonnes pour créer un nouvel objet de données
+arrondissements_test <- subset(new_poly, select = c(c_ar, l_aroff, surface, l_ar, n_sq_co, c_arinsee, n_sq_ar, perimetre, geom_x_y))
+# à noter qu'il est très important de mettre les éléments dans le même ordre que celui du tableau
+
+# Remplacer les informations de l'arrondissement "Passy" dans l'objet "arrondissements" par les nouvelles informations
+arrondissements[arrondissements$l_aroff == "Passy", ] <- arrondissements_test
+
+# Afficher la carte de l'objet "arrondissements" avec les frontières en noir
+mf_map(x = arrondissements, border = "black")
+
 
 ```
 
