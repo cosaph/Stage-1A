@@ -27,7 +27,9 @@
     "R_vscode_doc.html": "ebceaf15"
   },
   "R/Nuage_de_mot/nuage_de_mot.qmd": {
-    "nuage_de_mot.html": "c04d1c68"
+    "nuage_de_mot.html": "c04d1c68",
+    "Package_mapsf": "c20c72b4",
+    "Exemple_quarto": "0c9a2522"
   },
   "R/Package_purr/package_purr.qmd": {
     "package_purr.html": "9b991f03"
@@ -40,5 +42,20 @@
   },
   "R/R_cartographie/R_cartographie.qmd": {
     "R_cartographie.html": "5224d0fe"
+  },
+  "R/R_cartographie/map_sf.qmd": {
+    "map_sf.html": "1f4be095"
+  },
+  "R/R_cartographie/clarisse/exlication.qmd": {
+    "exlication.html": "9571fab8"
+  },
+  "R/R_cartographie/clarisse/explication.qmd": {
+    "explication.html": "a616ca04"
+  },
+  "R/R_cartographie/package_mapsf/map_sf.qmd": {
+    "map_sf.html": "f2d090cc"
+  },
+  "R/Package_mapsf/mapsf.qmd": {
+    "mapsf.html": "bf9f071e"
   }
 }
