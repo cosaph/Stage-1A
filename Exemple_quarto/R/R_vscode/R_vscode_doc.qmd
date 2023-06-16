@@ -8,7 +8,7 @@ affiliations: INED
 
 date: 07/06/2023
 
-css: "style.css"
+
 ---
 
 <img src="Visual_Studio_Code_1.35_icon.svg.png" alt="Texte alternatif de l'image" title="Titre de l'image" width="120" height="120"/>
