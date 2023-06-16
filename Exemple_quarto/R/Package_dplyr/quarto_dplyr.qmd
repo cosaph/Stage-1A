@@ -8,7 +8,6 @@ affiliations: INED
 
 date: 06/06/2023
 
-css: "style.css"
 
 ---
 <img src="R_logo.svg.png" alt="Texte alternatif de l'image" title="Titre de l'image" width="160" height="140" />
