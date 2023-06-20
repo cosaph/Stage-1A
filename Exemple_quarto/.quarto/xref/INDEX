@@ -1,0 +1,61 @@
+{
+  "index.qmd": {
+    "index.html": "836bcaeb"
+  },
+  "about.qmd": {
+    "about.html": "e11b8f37"
+  },
+  "Rio_package.qmd": {
+    "Rio_package.html": "d4d07c8f"
+  },
+  "Untitled-1.qmd": {
+    "Untitled-1.html": "cb2c682b"
+  },
+  "R/Package_dply/quarto_dplyr.qmd": {
+    "quarto_dplyr.html": "460f15e8"
+  },
+  "R/Package_rio/Rio_package.qmd": {
+    "Rio_package.html": "22999d74"
+  },
+  "R/Untitled-1.qmd": {
+    "Untitled-1.html": "84f209be"
+  },
+  "R/Package_dplyr/quarto_dplyr.qmd": {
+    "quarto_dplyr.html": "2de3aa97"
+  },
+  "R/R_vscode/R_vscode_doc.qmd": {
+    "R_vscode_doc.html": "ebceaf15"
+  },
+  "R/Nuage_de_mot/nuage_de_mot.qmd": {
+    "nuage_de_mot.html": "c04d1c68",
+    "Package_mapsf": "c20c72b4",
+    "Exemple_quarto": "0c9a2522"
+  },
+  "R/Package_purr/package_purr.qmd": {
+    "package_purr.html": "9b991f03"
+  },
+  "R/Package_purrr/package_purrr.qmd": {
+    "package_purrr.html": "e7f8afc3"
+  },
+  "R/Nuage_de_mot/nuage_de_mot_rtemis.qmd": {
+    "nuage_de_mot_rtemis.html": "fa52a524"
+  },
+  "R/R_cartographie/R_cartographie.qmd": {
+    "R_cartographie.html": "5224d0fe"
+  },
+  "R/R_cartographie/map_sf.qmd": {
+    "map_sf.html": "1f4be095"
+  },
+  "R/R_cartographie/clarisse/exlication.qmd": {
+    "exlication.html": "9571fab8"
+  },
+  "R/R_cartographie/clarisse/explication.qmd": {
+    "explication.html": "a616ca04"
+  },
+  "R/R_cartographie/package_mapsf/map_sf.qmd": {
+    "map_sf.html": "f2d090cc"
+  },
+  "R/Package_mapsf/mapsf.qmd": {
+    "mapsf.html": "bf9f071e"
+  }
+}
