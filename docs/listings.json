@@ -1,0 +1,19 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/R/index.html",
+      "/R/Nuage_de_mot/nuage_de_mot.html",
+      "/R/Nuage_de_mot/nuage_de_mot_rtemis.html",
+      "/R/Package_dplyr/quarto_dplyr.html",
+      "/R/Package_purrr/package_purrr.html",
+      "/R/Package_rio/Rio_package.html",
+      "/R/Package_mapsf/map_sf.html",
+      "/R/Package_mapsf/R_cartographie.html"
+    ]
+  },
+  {
+    "listing": "/R/index.html",
+    "items": []
+  }
+]

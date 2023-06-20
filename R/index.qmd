@@ -1,0 +1,19 @@
+---
+title: "Assistances R"
+search: false
+listing:
+  contents: 
+  - assist
+  - "!index.qmd"
+  sort: "date desc"
+  type: table
+  categories: true
+  sort-ui: true
+  filter-ui: true
+  page-size: 30
+  max-items: 20
+  max-description-length: 300
+---
+
+- Faire une présentation
+- Eventuellement recenser les ressources principales: JL,JUBA...
